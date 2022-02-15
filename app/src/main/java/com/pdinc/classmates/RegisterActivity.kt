@@ -27,6 +27,7 @@ class RegisterActivity : AppCompatActivity() {
             if(!email.matches(emailPattern.toRegex()) || password.length<4){
                 Toast.makeText(this,"Check email or password", Toast.LENGTH_SHORT).show()
             }else{
+
                 mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
